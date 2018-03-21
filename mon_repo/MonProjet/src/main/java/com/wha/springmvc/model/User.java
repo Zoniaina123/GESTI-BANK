@@ -1,6 +1,7 @@
 package com.wha.springmvc.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -9,6 +10,7 @@ import javax.persistence.Table;
 public class User {
 
 	@Id
+	@GeneratedValue
 	private long id;
 	
 	private String username;
@@ -20,14 +22,14 @@ public class User {
 	public User(){
 		id=0;
 	}
-	
-	public User(long id, String username, String address, String email){
+	     
+	public User(long id,  String username, String address, String email){
 		this.id = id;
 		this.username = username;
 		this.address = address;
 		this.email = email;
 	}
-
+   
 	public long getId() {
 		return id;
 	}
