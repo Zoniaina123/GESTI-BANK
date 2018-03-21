@@ -6,6 +6,7 @@ import com.wha.springmvc.model.User;
 
 
 
+
 public interface UserService {
 	
 	User findById(long id);
