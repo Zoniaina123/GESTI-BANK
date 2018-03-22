@@ -1,7 +1,22 @@
 package com.wha.springmvc.model;
 
-public class CompteSansDecouvert {
+import java.sql.Date;
+
+public class CompteSansDecouvert extends Compte {
 	
-	private String str ;
+	private double decouvert ;
+
+	public CompteSansDecouvert() {
+		this.decouvert=0;
+	}
+
+	public CompteSansDecouvert(Date dateCreation, double solde) {
+		super(dateCreation, solde);
+
+	}
+	
+	
+	
+	
 
 }
