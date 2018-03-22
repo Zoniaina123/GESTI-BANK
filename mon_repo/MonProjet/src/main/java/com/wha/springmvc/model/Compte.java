@@ -35,7 +35,7 @@ public void setDateCreation(Date dateCreation) {
 	this.dateCreation = dateCreation;
 }
 
-public double getSolde() {
+public double getSold() {
 	return solde;
 }
 
