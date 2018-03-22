@@ -44,31 +44,14 @@ public class Conseiller extends User {
 		this.dateDebut = dateDebut;
 		this.clients = clients;
 	}
-
-	public void rechercheCompte() {
-		// TODO implement here
+	
+	
+	public Conseiller(int id, String username, String prenom, String email, String pwd, String address, String numTel) {
+		super(id, username, prenom, email, pwd, address, numTel);
+		// TODO Auto-generated constructor stub
 	}
 
-	/**
-	 * 
-	 */
-	public void ouvertureCompte() {
-		// TODO implement here
-	}
 
-	/**
-	 * 
-	 */
-	public void editionCompte() {
-		// TODO implement here
-	}
-
-	/**
-	 * 
-	 */
-	public void visualisationCompte() {
-		// TODO implement here
-	}
 
 	public int getMatricule() {
 		return matricule;
@@ -96,7 +79,7 @@ public class Conseiller extends User {
 
 	@Override
 	public String toString() {
-		return "Conseiller [matricule=" + matricule + ", dateDebut=" + dateDebut + "]";
+		return "Conseiller [matricule=" + matricule + ", dateDebut=" + dateDebut + ", clients=" + clients + "]";
 	}
 	
 
