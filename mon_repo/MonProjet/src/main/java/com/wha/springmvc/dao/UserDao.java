@@ -2,6 +2,7 @@ package com.wha.springmvc.dao;
 
 import java.util.List;
 
+
 import com.wha.springmvc.model.User;
 
 public interface UserDao {

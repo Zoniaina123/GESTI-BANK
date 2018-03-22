@@ -1,5 +1,7 @@
 package com.wha.springmvc.model;
 
+
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,32 +12,36 @@ import javax.persistence.Table;
 @Table(name="user")
 public class User {
 
-	@Id    
+	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
-	
+	private int id;
 	private String username;
-	
-	private String address;
-	
+	private String prenom;
 	private String email;
+	private String pwd;
+	private String address;
+	private String numTel;
+
 	
 	public User(){
 		id=0;
 	}
-	     
-	public User(long id,  String username, String address, String email){
+	
+	public User(int id, String username, String prenom, String email, String pwd, String address, String numTel){
 		this.id = id;
 		this.username = username;
-		this.address = address;
+		this.prenom = prenom;
 		this.email = email;
+		this.pwd = pwd;
+		this.address = address;
+		this.numTel = numTel;
 	}
-   
-	public long getId() {
+
+	public int getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -46,6 +52,30 @@ public class User {
 	public void setUsername(String username) {
 		this.username = username;
 	}
+	
+	public String getPrenom() {
+		return prenom;
+	}
+
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPwd() {
+		return pwd;
+	}
+
+	public void setPwd(String pwd) {
+		this.pwd = pwd;
+	}
 
 	public String getAddress() {
 		return address;
@@ -54,13 +84,13 @@ public class User {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-
-	public String getEmail() {
-		return email;
+	
+	public String getNumTel() {
+		return numTel;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setNumTel(String numTel) {
+		this.numTel = numTel;
 	}
 
 	@Override
@@ -87,10 +117,10 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", nom=" + username + ", adresse=" + address
-				+ ", email=" + email + "]";
-	}
-	
+		return "User [id=" + id + ", username=" + username + ", prenom="
+				+ prenom + ", email=" + email + ", pwd=" + pwd + ", address="
+				+ address + ", numTel=" + numTel + "]";
+	}	
 
 	
 }
