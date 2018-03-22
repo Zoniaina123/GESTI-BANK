@@ -13,6 +13,7 @@ public class CompteAvecDecouvert extends Compte {
 	public CompteAvecDecouvert(Date dateCreation, double solde, double decouvert) {
 		super(dateCreation, solde);
 		this.decouvert = decouvert;
+		
 
 	}
 
