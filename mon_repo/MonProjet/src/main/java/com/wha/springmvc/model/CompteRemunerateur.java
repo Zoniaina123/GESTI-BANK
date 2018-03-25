@@ -1,8 +1,13 @@
 package com.wha.springmvc.model;
 
-import java.sql.Date;
+import java.util.Date;
 
-public class CompteRemunerateur extends Compte {
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+@Entity
+@DiscriminatorValue("CR")
+public class CompteRemunerateur extends Compte{
+
 	
 	private double taux ;
 
@@ -11,9 +16,11 @@ public class CompteRemunerateur extends Compte {
 	
 	}
 
-	public CompteRemunerateur(Date dateCreation, double solde ,double taux ) {
-		super(dateCreation, solde);
+	public CompteRemunerateur(double solde, Date dateCreation, Client client) {
+		super(solde, dateCreation, client);
+	
 		this.taux=taux;
+	
 	}
 
 	public double getTaux() {
@@ -25,5 +32,4 @@ public class CompteRemunerateur extends Compte {
 	}
 	
 	
-
 }

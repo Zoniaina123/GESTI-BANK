@@ -1,19 +1,32 @@
 package com.wha.springmvc.model;
 
-import java.sql.Date;
+import java.util.Date;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
+
+@Entity
+@DiscriminatorValue("CSD")
 public class CompteSansDecouvert extends Compte {
 	
-	private double decouvert ;
+	private static final double decouvert =0;
 
 	public CompteSansDecouvert() {
-		this.decouvert=0;
+		
 	}
 
-	public CompteSansDecouvert(Date dateCreation, double solde) {
-		super(dateCreation, solde);
-
+	public CompteSansDecouvert(double solde, Date dateCreation, Client client) {
+		super(solde, dateCreation, client);
+	
 	}
+
+	public static double getDecouvert() {
+		return decouvert;
+	}
+
+
+
 	
 	
 	
