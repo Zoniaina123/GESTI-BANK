@@ -4,57 +4,46 @@ package com.wha.springmvc.model;
 
 import java.io.Serializable;
 
-import javax.persistence.DiscriminatorColumn;
-import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType; 
+import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="user")
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "Role", discriminatorType = DiscriminatorType.STRING, length = 2)
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 
-
-public class User implements Serializable{
+public class User implements Serializable {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	private String nom;
 	private String prenom;
 	private String email;
-	private String identifiant;
+	private String username;
 	private String pwd;
 	private String address;
 	private String numTel;
 
 	
 	public User(){
-	
+		id=0;
 	}
 	
-
-
-	public User(String nom, String prenom, String email, String identifiant, String pwd, String address,
-			String numTel) {
-		super();
-		this.nom = nom;
+	public User(int id, String username, String prenom, String email, String pwd, String address, String numTel){
+		this.id = id;
+		this.username = username;
 		this.prenom = prenom;
 		this.email = email;
-		this.identifiant = identifiant;
 		this.pwd = pwd;
 		this.address = address;
 		this.numTel = numTel;
 	}
 
-
-
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 
@@ -62,9 +51,13 @@ public class User implements Serializable{
 		this.id = id;
 	}
 
-	
+	public String getUsername() {
+		return username;
+	}
 
-
+	public void setUsername(String username) {
+		this.username = username;
+	}
 	
 	public String getPrenom() {
 		return prenom;
@@ -128,15 +121,12 @@ public class User implements Serializable{
 		return true;
 	}
 
-
-
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", email=" + email + ", identifiant="
-				+ identifiant + ", pwd=" + pwd + ", address=" + address + ", numTel=" + numTel + "]";
-	}
-
-		
+		return "User [id=" + id + ", username=" + username + ", prenom="
+				+ prenom + ", email=" + email + ", pwd=" + pwd + ", address="
+				+ address + ", numTel=" + numTel + "]";
+	}	
 
 	
 }
